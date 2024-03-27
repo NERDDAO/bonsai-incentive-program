@@ -19,7 +19,7 @@ import { Address } from "~~/components/scaffold-eth";
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
 const Home: NextPage = () => {
-  //const router = useRouter();
+  const router = useRouter();
   const [isConnected, setIsConnected] = useState(false);
   const { address: connectedAddress } = useAccount();
 
@@ -27,7 +27,7 @@ const Home: NextPage = () => {
     // Check if connectedAddress exists and is not null
     if (connectedAddress) {
       setIsConnected(true);
-      //router.push("/debug");
+      router.push("/home");
       // Push to the debug page when connectedAddress changes
     }
   }, [connectedAddress]);
@@ -35,7 +35,7 @@ const Home: NextPage = () => {
   return (
     <>
       <div className="backdrop-blur-md">
-        <div className="flex items-center flex-col pt-20 bg-[url('/bonsai-landscape-2.png')] bg-cover bg-center">
+        <div className="flex items-center flex-grow flex-col pt-20 bg-[url('/bonsai-landscape-2.png')] bg-cover bg-center">
           <div className="px-5">
             <h1 className="text-center">
               <span className="block text-8xl mb-2">盆栽農園</span>
