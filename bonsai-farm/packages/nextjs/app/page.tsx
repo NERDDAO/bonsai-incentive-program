@@ -27,7 +27,7 @@ const Home: NextPage = () => {
     // Check if connectedAddress exists and is not null
     if (connectedAddress) {
       setIsConnected(true);
-      router.push("/home");
+      router.push("/nest");
       // Push to the debug page when connectedAddress changes
     }
   }, [connectedAddress]);

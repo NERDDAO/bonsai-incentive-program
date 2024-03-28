@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import { RainbowKitProvider, darkTheme, lightTheme } from "@rainbow-me/rainbowkit";
 import { useTheme } from "next-themes";
-import { Toaster } from "react-hot-toast";
 import { WagmiConfig } from "wagmi";
 import { Footer } from "~~/components/Footer";
 import { Header } from "~~/components/Header";
@@ -28,10 +27,11 @@ const ScaffoldEthApp = ({ children }: { children: React.ReactNode }) => {
     <>
       <div className="flex flex-col min-h-screen">
         <Header />
-        <main className="relative flex flex-col flex-1 bg-[url('/bonsai-landscape-2.png')] bg-cover bg-center">{children}</main>
+        <main className="relative flex flex-col flex-1 overflow-y-auto bg-[url('/bonsai-landscape-2.png')] bg-cover bg-center">
+          {children}
+        </main>
         <Footer />
       </div>
-      <Toaster />
     </>
   );
 };
