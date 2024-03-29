@@ -27,9 +27,10 @@ const ScaffoldEthApp = ({ children }: { children: React.ReactNode }) => {
     <>
       <div className="flex flex-col min-h-screen">
         <Header />
-        <main className="relative flex flex-col flex-1 overflow-y-auto bg-[url('/bonsai-landscape-2.png')] bg-cover bg-center">
-          {children}
-        </main>
+        <video autoPlay muted loop playsInline className="absolute w-full h-full object-cover">
+          <source src="/sakura-bg-video-3.mov" type="video/mp4" />
+        </video>
+        <main className="relative flex flex-col flex-1 overflow-y-auto bg-cover bg-center">{children}</main>
         <Footer />
       </div>
     </>
