@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import MarcOsWindow from "../../components/macOS/newWindowMacOS";
 import type { NextPage } from "next";
 import { getMetadata } from "~~/utils/scaffold-eth/getMetadata";
 
@@ -8,12 +9,23 @@ export const metadata = getMetadata({
 });
 
 const Debug: NextPage = () => {
+  const screenWidth = window.innerWidth;
+  const windowWidth = screenWidth - 50;
+
   return (
     <>
-      <div className="flex items-center flex-col flex-grow pt-20 bg-transparent">
-        <div className="text-center mt-8 p-10 bg-transparent">
-          {/* <img src="easter-frame.png" alt="Description of the image" className="w-full h-auto bg-transparent" /> */}
-          <img src="tori-frame.png" alt="Description of the image" className="w-full h-auto bg-transparent" />
+      <div className="relative pt-20 pb-20">
+        <div className="absolute flex flex-wrap items-center justify-center bg-transparent ml-20">
+          <div className=" flex flex-col items-center m-20">
+            <MarcOsWindow
+              title="My Window"
+              initPosition={{ x: 0, y: 35 }}
+              initSize={{ width: windowWidth, height: 300 }}
+            >
+              <p className="vt323-regular text-gray-700">This is the content of the Internet Explorer window.</p>
+              <img src="nyancat-surf.png" alt="nyancat cat" className="h-1/2 py-0 my-0" />
+            </MarcOsWindow>
+          </div>
         </div>
       </div>
     </>

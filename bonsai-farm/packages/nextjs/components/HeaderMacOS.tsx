@@ -82,9 +82,8 @@ export const HeaderMacOS = () => {
           >
             <div className="fixed flex top-0 flex-row py-0 my-0 gap-2">
               <img src="logo-banana.png" alt="logo banana" className="h-1/2 py-0 my-0 w-fit" />
-              <span className="font-bold text-black leading-tight my-0 py-0">盆栽農園</span>
+              <span className="font-bold text-black leading-tight my-0 py-0 kode-mono-retro">盆栽農園</span>
             </div>
-            
           </label>
           {isDrawerOpen && (
             <ul

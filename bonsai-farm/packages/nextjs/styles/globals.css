@@ -2,8 +2,7 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=Kode+Mono:wght@400..700&family=Press+Start+2P&family=VT323&display=swap');
 :root,
 [data-theme] {
   background: oklch(var(--b2));
@@ -39,4 +38,161 @@ p {
   font-weight: 400;
   font-style: normal;
 }
+
+.kode-mono-retro {
+  font-family: "Kode Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.dotgothic16-regular {
+  font-family: "DotGothic16";
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+.pixel-corners {
+/* Crear una forma recortada con un clip-path */
+
+  clip-path: polygon(
+    0px calc(100% - 20px),
+    4px calc(100% - 20px),
+    4px calc(100% - 12px),
+    8px calc(100% - 12px),
+    8px calc(100% - 8px),
+    12px calc(100% - 8px),
+    12px calc(100% - 4px),
+    20px calc(100% - 4px),
+    20px 100%,
+    calc(100% - 20px) 100%,
+    calc(100% - 20px) calc(100% - 4px),
+    calc(100% - 12px) calc(100% - 4px),
+    calc(100% - 12px) calc(100% - 8px),
+    calc(100% - 8px) calc(100% - 8px),
+    calc(100% - 8px) calc(100% - 12px),
+    calc(100% - 4px) calc(100% - 12px),
+    calc(100% - 4px) calc(100% - 20px),
+    100% calc(100% - 20px),
+    100% 20px,
+    calc(100% - 4px) 20px,
+    calc(100% - 4px) 12px,
+    calc(100% - 8px) 12px,
+    calc(100% - 8px) 8px,
+    calc(100% - 12px) 8px,
+    calc(100% - 12px) 4px,
+    calc(100% - 20px) 4px,
+    calc(100% - 20px) 0px,
+    20px 0px,
+    20px 4px,
+    12px 4px,
+    12px 8px,
+    8px 8px,
+    8px 12px,
+    4px 12px,
+    4px 20px,
+    0px 20px
+  );
+
+}
+
+.pixel-top-corners {
+  clip-path: polygon(
+
+  /*Bottom left*/
+
+    0px calc(100% - 0px),
+    4px calc(100% - 0px),
+    4px calc(100% - 0px),
+    8px calc(100% - 0px),
+    8px calc(100% - 0px),
+    12px calc(100% - 0px),
+    12px calc(100% - 0px),
+    20px calc(100% - 0px),
+    /*Bottom right*/
+    20px 100%,
+    calc(100% - 20px) 100%,
+    calc(100% - 20px) calc(100% - 0px),
+    calc(100% - 12px) calc(100% - 0px),
+    calc(100% - 12px) calc(100% - 0px),
+    calc(100% - 8px) calc(100% - 0px),
+    calc(100% - 8px) calc(100% - 0px),
+    calc(100% - 4px) calc(100% - 0px),
+    calc(100% - 4px) calc(100% - 0px),
+    100% calc(100% - 0px),
+
+    /*Top right*/
+    100% 15px,
+    calc(100% - 3px) 15px,
+    calc(100% - 3px) 9px,
+    calc(100% - 6px) 9px,
+    calc(100% - 6px) 6px,
+    calc(100% - 9px) 6px,
+    calc(100% - 9px) 3px,
+    calc(100% - 15px) 3px,
+    calc(100% - 15px) 0px,
+    /*Top left*/
+    15px 0px,
+    15px 3px,
+    9px 3px,
+    9px 6px,
+    6px 6px,
+    6px 9px,
+    3px 9px,
+    3px 15px,
+    0px 15px
+  );
+}
+
+.pixel-top-corners-soft {
+  clip-path: polygon(
+
+  /*Bottom left*/
+
+    0px calc(100% - 0px),
+    4px calc(100% - 0px),
+    4px calc(100% - 0px),
+    8px calc(100% - 0px),
+    8px calc(100% - 0px),
+    12px calc(100% - 0px),
+    12px calc(100% - 0px),
+    20px calc(100% - 0px),
+    /*Bottom right*/
+    20px 100%,
+    calc(100% - 20px) 100%,
+    calc(100% - 20px) calc(100% - 0px),
+    calc(100% - 12px) calc(100% - 0px),
+    calc(100% - 12px) calc(100% - 0px),
+    calc(100% - 8px) calc(100% - 0px),
+    calc(100% - 8px) calc(100% - 0px),
+    calc(100% - 4px) calc(100% - 0px),
+    calc(100% - 4px) calc(100% - 0px),
+    100% calc(100% - 0px),
+
+    /*Top right*/
+    100% 10px,
+    calc(100% - 2px) 10px,
+    calc(100% - 2px) 6px,
+    calc(100% - 4px) 6px,
+    calc(100% - 4px) 4px,
+    calc(100% - 6px) 4px,
+    calc(100% - 6px) 2px,
+    calc(100% - 10px) 2px,
+    calc(100% - 10px) 0px,
+    /*Top left*/
+    10px 0px,
+    10px 2px,
+    6px 2px,
+    6px 4px,
+    4px 4px,
+    4px 6px,
+    2px 6px,
+    2px 10px,
+    0px 10px
+  );
+}
+
+
+
 

@@ -11,16 +11,50 @@ export const metadata = getMetadata({
 const Nest: NextPage = () => {
   return (
     <>
-      <div className="flex items-center flex-grow flex-col pt-20 pb-20">
-        {/* <div className="px-5">
-          <h1 className="text-center mt-10">
-            <span className="block text-8xl mb-2">盆栽農園</span>
-            <span className="block text-4xl font-bold">利用可能</span>
-          </h1>
-        </div> */}
-        <div className="flex flex-wrap items-center justify-around bg-transparent">
+      <div className="relative pt-20 pb-20">
+        <div className="absolute flex flex-wrap items-center justify-around bg-transparent ml-20">
           <div className=" flex flex-col items center m-20">
-            <MarcOsWindow title="My Window">
+            <MarcOsWindow title="My Window" initPosition={{ x: 0, y: 35 }} initSize={{ width: 200, height: 300 }}>
+              <p className="vt323-regular text-gray-700">This is the content of the Internet Explorer window.</p>
+              <img src="nyancat-surf.png" alt="nyancat cat" className="h-1/2 py-0 my-0" />
+            </MarcOsWindow>
+          </div>
+        </div>
+        <div className="absolute flex flex-wrap items-center justify-around bg-transparent ml-20">
+          <div className=" flex flex-col items center m-20">
+            <MarcOsWindow title="My Window" initPosition={{ x: 0, y: 370 }} initSize={{ width: 200, height: 300 }}>
+              <p className="vt323-regular text-gray-700">This is the content of the Internet Explorer window.</p>
+              <img src="nyancat-surf.png" alt="nyancat cat" className="h-1/2 py-0 my-0" />
+            </MarcOsWindow>
+          </div>
+        </div>
+        <div className=" absolute flex flex-wrap items-center justify-around bg-transparent">
+          <div className=" flex flex-col items center m-20">
+            <MarcOsWindow title="My Window" initPosition={{ x: 340, y: 35 }} initSize={{ width: 800, height: 200 }}>
+              <p className="vt323-regular text-gray-700">This is the content of the Internet Explorer window.</p>
+              <img src="nyancat-surf.png" alt="nyancat cat" className="h-1/2 py-0 my-0" />
+            </MarcOsWindow>
+          </div>
+        </div>
+        <div className="absolute flex flex-wrap items-center justify-around bg-transparent">
+          <div className=" flex flex-col items center m-20">
+            <MarcOsWindow title="My Window" initPosition={{ x: 340, y: 270 }} initSize={{ width: 800, height: 400 }}>
+              <p className="vt323-regular text-gray-700">This is the content of the Internet Explorer window.</p>
+              <img src="nyancat-surf.png" alt="nyancat cat" className="h-1/2 py-0 my-0" />
+            </MarcOsWindow>
+          </div>
+        </div>
+        <div className="absolute flex flex-wrap items-center justify-around bg-transparent mr-20">
+          <div className=" flex flex-col items center m-20">
+            <MarcOsWindow title="My Window" initPosition={{ x: 1190, y: 35 }} initSize={{ width: 200, height: 150 }}>
+              <p className="vt323-regular text-gray-700">This is the content of the Internet Explorer window.</p>
+              <img src="nyancat-surf.png" alt="nyancat cat" className="h-1/2 py-0 my-0" />
+            </MarcOsWindow>
+          </div>
+        </div>
+        <div className="absolute flex flex-wrap items-center justify-around bg-transparent mr-20 mb-20">
+          <div className=" flex flex-col items center m-20">
+            <MarcOsWindow title="My Window" initPosition={{ x: 1190, y: 200 }} initSize={{ width: 200, height: 600 }}>
               <p className="vt323-regular text-gray-700">This is the content of the Internet Explorer window.</p>
               <img src="nyancat-surf.png" alt="nyancat cat" className="h-1/2 py-0 my-0" />
             </MarcOsWindow>

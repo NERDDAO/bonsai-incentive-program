@@ -27,16 +27,34 @@ export const FooterMacOS = () => {
 
   return (
     <div>
-      <div className="flex justify-center fixed bottom-0 right-0 left-0 z-20 bg-none ">
-        <div className="flex m-0 gap-6 bg-white py-2 px-10 border rounded-sm bg-opacity-75">
+      <div className="flex justify-center fixed bottom-0 right-0 left-0 z-20 bg-none">
+        <div className="flex m-0 gap-6 bg-white py-2 px-10 border rounded-sm bg-opacity-75 pixel-top-corners-soft">
           <div onClick={toggleUp} className="p-0 drop-shadow-2xl">
-            <Image src="/macOs-logo.png" width="66" height="30" alt="macOS icon" className="m-0" />
+            <Image
+              src="/macOs-logo.png"
+              width="66"
+              height="30"
+              alt="macOS icon"
+              className="m-0 image-rendering-pixelated image-rendering-crisp-edges"
+            />
           </div>
           <div onClick={toggleUp} className="p-0 drop-shadow-lg">
-            <Image src="/logo-bonsai-farm.png" width="66" height="30" alt="macOS icon" className="m-0" />
+            <Image
+              src="/logo-bonsai-farm.png"
+              width="66"
+              height="30"
+              alt="macOS icon"
+              className="m-0 image-rendering-pixelated image-rendering-crisp-edges"
+            />
           </div>
           <div onClick={toggleUp} className="p-0 drop-shadow-lg">
-            <Image src="/logo-bonsai.png" width="66" height="30" alt="macOS icon" className="m-0" />
+            <Image
+              src="/logo-bonsai.png"
+              width="66"
+              height="30"
+              alt="macOS icon"
+              className="m-0 image-rendering-pixelated image-rendering-crisp-edges"
+            />
           </div>
           {/* Menu component to be displayed */}
         </div>

@@ -37,13 +37,13 @@ const Home: NextPage = () => {
   return (
     <>
       <div className="backdrop-blur-md">
-        <div className="flex items-center flex-grow flex-col pt-20 bg-[url('/bonsai-landscape-2.png')] bg-cover bg-center">
+        <div className="flex items-center flex-grow flex-col pt-20">
           <div className="px-5">
             <h1 className="text-center">
-              <span className="block text-8xl mb-2">盆栽農園</span>
-              <span className="block text-4xl font-bold">へようこそ</span>
+              <span className="block text-8xl mb-2 kode-mono-retro">盆栽農園</span>
+              <span className="block text-4xl font-bold kode-mono-retro">へようこそ</span>
             </h1>
-            <p className="text-center text-lg">Mint your Lucky Nest and start earning $Bonsai</p>
+            <p className="text-center text-lg kode-mono-retro">Mint your Lucky Nest and start earning $Bonsai</p>
           </div>
           <div>
             <img src="logo-bonsai-farm.png" alt="Description of the image" className="w-full h-auto" />

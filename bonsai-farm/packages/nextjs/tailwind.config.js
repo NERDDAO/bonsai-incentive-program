@@ -85,5 +85,9 @@ module.exports = {
         retro: ["VT323", "monospace"],
       },
     },
+    imageRendering: {
+      pixelated: "pixelated", // o 'crisp-edges' dependiendo del efecto deseado
+      crispEdges: "crisp-edges",
+    },
   },
 };

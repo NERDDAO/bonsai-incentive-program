@@ -3,13 +3,23 @@
 import React from "react";
 import { useEffect, useState } from "react";
 
-const MarcOsWindow = ({ title, children }: { title: string; children: React.ReactNode }) => {
+const MarcOsWindow = ({
+  title,
+  initPosition,
+  initSize,
+  children,
+}: {
+  title: string;
+  initPosition: { x: number; y: number };
+  initSize: { width: number; height: number };
+  children: React.ReactNode;
+}) => {
   const [isDragging, setIsDragging] = useState(false);
   const [isResizing, setIsResizing] = useState(false);
 
   const [offset, setOffset] = useState({ x: 0, y: 0 });
-  const [position, setPosition] = useState({ x: 560, y: 150 });
-  const [size, setSize] = useState({ width: 800, height: 600 });
+  const [position, setPosition] = useState({ x: initPosition.x, y: initPosition.y });
+  const [size, setSize] = useState({ width: initSize.width, height: initSize.height });
   const [initialClick, setInitialClick] = useState({ x: 0, y: 0 });
 
   const getWindowDimensions = () => {
@@ -25,15 +35,20 @@ const MarcOsWindow = ({ title, children }: { title: string; children: React.Reac
   };
 
   const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
+  const [windowDimensionsOld, setWindowDimensionsOld] = useState(windowDimensions);
 
   useEffect(() => {
     const handleResize = () => {
       setWindowDimensions(getWindowDimensions());
-      setPosition({ x: windowDimensions.width / 2, y: windowDimensions.height / 2 });
+      setPosition({
+        x: position.x - (windowDimensionsOld.width - windowDimensions.width),
+        y: position.y - (windowDimensionsOld.height - windowDimensions.height),
+      });
+      setWindowDimensionsOld(windowDimensions);
     };
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  }, [windowDimensions.height, windowDimensions.width]);
 
   const handleMouseDown = (e: { clientX: number; clientY: number }) => {
     setIsDragging(true);
@@ -78,7 +93,7 @@ const MarcOsWindow = ({ title, children }: { title: string; children: React.Reac
 
   return (
     <div
-      className="w-192 h-160 bg-[#FEFEFE] border-2 border-[#061990] border-[#3A4561] rounded-t-xl overflow-hidden"
+      className="w-192 h-160 bg-[#FEFEFE] border-2 border-[#061990] border-[#3A4561] rounded-t-xl overflow-hidden image-rendering-pixelated image-rendering-crisp-edges pixel-top-corners "
       style={{
         position: "absolute",
         left: position.x,
@@ -92,7 +107,7 @@ const MarcOsWindow = ({ title, children }: { title: string; children: React.Reac
       onMouseUp={handleMouseUpBorder}
     >
       <div
-        className="h-full border-2 border-[#708193] rounded-t-xl"
+        className="h-full border-2 border-[#708193] rounded-t-xl image-rendering-pixelated image-rendering-crisp-edges"
         onMouseDown={handleMouseDown}
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
@@ -103,7 +118,7 @@ const MarcOsWindow = ({ title, children }: { title: string; children: React.Reac
             <button className="flex justify-center items-center rounded-full w-3 h-3 bg-[#E6C36F] text-black "></button>
             <button className="flex justify-center items-center rounded-full w-3 h-3 bg-[#9FCA7B] text-black "></button>
           </div>
-          <div className="font-bold text-[#3E3E3E]">{title}</div>
+          <div className="font-bold text-[#3E3E3E] vt323-regular">{title}</div>
           <div className="flex gap-2">
             <div className="w-6 h-3 border-2 border-[#ACACAC] rounded-md">
               <button className="flex justify-center items-center w-5 h-2 bg-[#DADADA] text-black rounded-md"></button>
