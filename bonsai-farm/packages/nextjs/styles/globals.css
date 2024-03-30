@@ -2,6 +2,8 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
+
 :root,
 [data-theme] {
   background: oklch(var(--b2));
@@ -9,6 +11,7 @@
 
 body {
   min-height: 100vh;
+  font-family: "VT323", "Press Start 2P", system-ui, monospace;
 }
 
 h1,
@@ -30,3 +33,10 @@ p {
 .btn.btn-ghost {
   @apply shadow-none;
 }
+
+.vt323-regular {
+  font-family: "VT323";
+  font-weight: 400;
+  font-style: normal;
+}
+

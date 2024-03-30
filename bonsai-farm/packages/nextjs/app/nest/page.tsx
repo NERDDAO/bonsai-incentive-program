@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import MarcOsWindow from "../../components/macOS/newWindowMacOS";
 import type { NextPage } from "next";
 import { getMetadata } from "~~/utils/scaffold-eth/getMetadata";
 
@@ -11,32 +12,18 @@ const Nest: NextPage = () => {
   return (
     <>
       <div className="flex items-center flex-grow flex-col pt-20 pb-20">
-        <div className="px-5">
+        {/* <div className="px-5">
           <h1 className="text-center mt-10">
             <span className="block text-8xl mb-2">盆栽農園</span>
             <span className="block text-4xl font-bold">利用可能</span>
           </h1>
-        </div>
+        </div> */}
         <div className="flex flex-wrap items-center justify-around bg-transparent">
-          {/* <img src="easter-frame.png" alt="Description of the image" className="w-full h-auto bg-transparent" /> */}
-          <div className=" flex flex-col items center mx-20 my-10">
-            <div>
-              <img src="tori-frame.png" alt="Description of the image" className="w-full h-auto bg-transparent" />
-            </div>
-            <button className="bg-black p-5 mt-2"> MINT</button>
-          </div>
           <div className=" flex flex-col items center m-20">
-            <div>
-              <img src="tori-frame.png" alt="Description of the image" className="w-full h-auto bg-transparent" />
-            </div>
-            <button className="bg-black p-5 mt-2"> MINT</button>
-          </div>
-          <div className=" flex flex-col items center m-20">
-            <div className="relative">
-              <img src="tori-frame.png" alt="Description of the image" className="w-full h-auto bg-transparent" />
-              <p className="absolute "></p>
-            </div>
-            <button className="bg-black p-5 mt-2"> MINT</button>
+            <MarcOsWindow title="My Window">
+              <p className="vt323-regular text-gray-700">This is the content of the Internet Explorer window.</p>
+              <img src="nyancat-surf.png" alt="nyancat cat" className="h-1/2 py-0 my-0" />
+            </MarcOsWindow>
           </div>
         </div>
       </div>

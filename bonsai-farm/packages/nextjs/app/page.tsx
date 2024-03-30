@@ -12,6 +12,8 @@ import type { NextPage } from "next";
 import { useAccount } from "wagmi";
 import { Address } from "~~/components/scaffold-eth";
 
+import InternetExplorerWindow from "../components/windowsXP/newWindowXP"
+
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable @typescript-eslint/no-unused-vars */
