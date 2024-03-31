@@ -19,15 +19,15 @@ export const menuLinks: HeaderMenuLink[] = [
   //   href: "/",
   // },
   {
-    label: "Nest",
+    label: "Bonsai Farms",
     href: "/nest",
   },
+  // {
+  //   label: "Bonsai Farms",
+  //   href: "/farm",
+  // },
   {
-    label: "Farms",
-    href: "/farm",
-  },
-  {
-    label: "Profile",
+    label: "Dashboard",
     href: "/profile",
   },
 ];

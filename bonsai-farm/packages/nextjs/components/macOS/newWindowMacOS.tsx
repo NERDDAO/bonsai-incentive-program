@@ -125,7 +125,7 @@ const MarcOsWindow = ({
             </div>
           </div>
         </div>
-        <div className="p-4">{children}</div>
+        <div className="">{children}</div>
         <div className="absolute inset-0 shadow-md"></div>
       </div>
     </div>

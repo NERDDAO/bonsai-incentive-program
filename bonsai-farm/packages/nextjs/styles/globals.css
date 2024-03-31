@@ -38,6 +38,13 @@ p {
   font-weight: 400;
   font-style: normal;
 }
+.vt323-heavy{
+  font-family: "VT323";
+  font-weight: 600;
+  font-style: bold;
+  font-size: larger;
+  
+}
 
 .kode-mono-retro {
   font-family: "Kode Mono", monospace;
