@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import MarcOsWindow from "../../components/macOS/newWindowMacOS";
+import ApproveButton from "../../components/mint/ApproveButton";
 import type { NextPage } from "next";
 import { getMetadata } from "~~/utils/scaffold-eth/getMetadata";
 
@@ -9,6 +10,9 @@ export const metadata = getMetadata({
 });
 
 const Nest: NextPage = () => {
+  const handleClick = () => {
+    console.log('Element clicked!');
+  };
   return (
     <>
       <div className="relative pt-20 pb-20">
@@ -22,10 +26,11 @@ const Nest: NextPage = () => {
         </div>
         <div className="absolute flex flex-wrap items-center justify-around bg-transparent ml-20">
           <div className=" flex flex-col items center m-20">
-            <MarcOsWindow title="My Window" initPosition={{ x: 0, y: 370 }} initSize={{ width: 200, height: 300 }}>
-              <p className="vt323-regular text-gray-700">This is the content of the Internet Explorer window.</p>
-              <img src="nyancat-surf.png" alt="nyancat cat" className="h-1/2 py-0 my-0" />
-            </MarcOsWindow>
+            <a href="https://www.youtube.com/watch?v=o1zj-q4JPGA" target="_blank" rel="noopener noreferrer">
+              <MarcOsWindow title="Salchipapa" initPosition={{ x: 0, y: 370 }} initSize={{ width: 200, height: 200 }}>
+                <img src="meme-salchipapa.png" alt="salchipapa plate" className="h-1/2 py-0 my-0 cursor-pointer" />
+              </MarcOsWindow>
+            </a>
           </div>
         </div>
         <div className="absolute flex flex-wrap items-center justify-around bg-transparent">
@@ -57,10 +62,14 @@ const Nest: NextPage = () => {
             <MarcOsWindow
               title="Farm with Bonsai"
               initPosition={{ x: 340, y: 270 }}
-              initSize={{ width: 800, height: 400 }}
+              initSize={{ width: 800, height: 1800 }}
             >
-              <p className="vt323-regular text-gray-700">This is the content of the Internet Explorer window.</p>
-              <img src="nyancat-surf.png" alt="nyancat cat" className="h-1/2 py-0 my-0" />
+              <div className="bg-[url('/bg-pineaple.png')] bg-opacity-75 p-4">
+                <h1 className="vt323-heavy text-gray-700 text-center py-0 my-0">Welcome to Our Epic Bonsai Bonanza!</h1>
+                <div className="flex w-fit h-fit items-start justify-around gap-4 py-0 my-0 bg-none z-50">
+                  <ApproveButton contractName={"Token"} spenderAddress={"0x0A65EB7B31Ad4b0b9fd73cC0e2bb1788eBb393b8"} />
+                </div>
+              </div>
             </MarcOsWindow>
           </div>
         </div>
