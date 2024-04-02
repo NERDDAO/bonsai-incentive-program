@@ -71,7 +71,7 @@ const Nest: NextPage = () => {
       <div className="overflow-scroll">
         <div className="">
           <WinBox
-            title={"Bonsai Farm"}
+            title={"Mad Farm"}
             icon="/logo.ico"
             noMin={false}
             noMax={false}
@@ -115,7 +115,7 @@ const Nest: NextPage = () => {
           </WinBox>
 
           <WinBox
-            title={"Salchipapa"}
+            title={"AEIOU"}
             icon="/logo.ico"
             noMin={false}
             noMax={false}
@@ -148,8 +148,8 @@ const Nest: NextPage = () => {
             onBlur={() => setIsFocus(false)}
           >
             <div style={{ padding: 10 }}>
-              <a href="https://www.youtube.com/watch?v=o1zj-q4JPGA" target="_blank" rel="noopener noreferrer">
-                <img src="meme-salchipapa.png" alt="salchipapa plate" className="h-1/2 py-0 my-0 cursor-pointer" />
+              <a href="https://www.youtube.com/watch?v=fgC-FCZ9B-w" target="_blank" rel="noopener noreferrer">
+                <img src="alicebonsai.png" alt="bonsai alice and bob" className="h-1/2 py-0 my-0 cursor-pointer" />
               </a>
             </div>
           </WinBox>
@@ -200,7 +200,7 @@ const Nest: NextPage = () => {
                       serene vibes and epic growth gains faster than you can say “photosynthesis!”
                     </p>
                     <p className="vt323-regular text-gray-700 text-start py-0 my-0">
-                      Got beef with our forest? Remember, embracing the bonsai way: we don't follow, we photosynthesize.
+                      Got beef with our forest? Remember, embracing the bonsai way: we do NOT follow, we photosynthesize.
                       🌱✨
                     </p>
                   </div>
@@ -244,7 +244,9 @@ const Nest: NextPage = () => {
           >
             <div style={{ padding: 10 }}>
               <div className="flex flex-col items-center justify-center bg-[url('/bg-pineaple.png')] bg-opacity-75 p-4">
-                <h1 className="vt323-heavy text-gray-700 text-center py-0 my-0">Welcome to Our Epic Bonsai Bonanza!</h1>
+                <h1 className="vt323-heavy text-gray-700 text-center py-0 my-0">
+                  How it works? You can earn $Bonsai with our bonsai NFT, stake them, and get more $Bonsai!
+                </h1>
                 <div className="flex items-center justify-around">
                   <img src="bobbonsai.gif" alt="nyancat cat" className="w-1/6 object-contain py-0 my-0" />
                   {isApproved ? <FarmStake /> : <FarmApprove />}
@@ -256,7 +258,7 @@ const Nest: NextPage = () => {
         </div>
         <div>
           <WinBox
-            title={"Salchipapa"}
+            title={"Level Up"}
             icon="/logo.ico"
             noMin={false}
             noMax={false}
@@ -289,12 +291,11 @@ const Nest: NextPage = () => {
             onBlur={() => setIsFocus(false)}
           >
             <div style={{ padding: 10 }}>
-              <p className="vt323-regular text-gray-700">This is the content of the Internet Explorer window.</p>
-              <img src="nyancat-surf.png" alt="nyancat cat" className="h-1/2 py-0 my-0" />
+              <img src="mushroombonsaijump.gif" alt="level up bonsai" className="h-1/2 py-0 my-0" />
             </div>
           </WinBox>
           <WinBox
-            title={"Salchipapa"}
+            title={"BoBro"}
             icon="/logo.ico"
             noMin={false}
             noMax={false}
@@ -327,8 +328,7 @@ const Nest: NextPage = () => {
             onBlur={() => setIsFocus(false)}
           >
             <div style={{ padding: 10 }}>
-              <p className="vt323-regular text-gray-700">This is the content of the Internet Explorer window.</p>
-              <img src="nyancat-surf.png" alt="nyancat cat" className="h-1/2 py-0 my-0" />
+              <img src="brocolibonsai.png" alt="brocoli bonsai" className="h-1/2 py-0 my-0" />
             </div>
           </WinBox>
         </div>

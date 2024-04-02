@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { useState } from "react";
 import externalContracts from "../../contracts/externalContracts";
