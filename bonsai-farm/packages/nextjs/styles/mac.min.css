@@ -16,15 +16,17 @@
     border-color: #666666;
     border-radius: 12px 12px 0 0;
     animation: popup .3s cubic-bezier(.3, 1, .3, 1) forwards;
+    position: absolute; /* or fixed */
+
   }
   
   .winbox.mac:not(.min, .focus) {
-    background: #666;
+    background: #EFEFEF;
   }
   
   @media (hover: hover) {
     .winbox.mac.min:not(:hover) {
-      background: #666;
+      background: #EFEFEF;
     }
   
     .winbox.mac .wb-control * {
@@ -38,7 +40,7 @@
   
   @media (hover: none) {
     .winbox.mac.min {
-      background: #666666;
+      background: #EFEFEF;
     }
   }
   
