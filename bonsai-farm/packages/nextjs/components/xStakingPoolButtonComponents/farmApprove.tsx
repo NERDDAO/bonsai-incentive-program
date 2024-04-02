@@ -20,7 +20,11 @@ function FarmApprove() {
     }
   };
 
-  return <button onClick={handleApprove}>Approve</button>;
+  return (
+    <button className="w-200 h-200" onClick={handleApprove}>
+      <img src="aproveflower.gif" alt="aprove flower button" />
+    </button>
+  );
 }
 
 export default FarmApprove;

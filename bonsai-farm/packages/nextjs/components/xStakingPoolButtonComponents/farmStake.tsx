@@ -19,7 +19,11 @@ function FarmStake() {
     }
   };
 
-  return <button onClick={handleStake}>Stake</button>;
+  return (
+    <button onClick={handleStake}>
+      <img src="stakeflower.gif" alt="stake flower button" />
+    </button>
+  );
 }
 
 export default FarmStake;
