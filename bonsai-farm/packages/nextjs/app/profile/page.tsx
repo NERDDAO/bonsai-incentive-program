@@ -2,7 +2,7 @@
 
 /* eslint-disable @next/next/no-img-element */
 import { useEffect, useState } from "react";
-import MarcOsWindow from "../../components/macOS/newWindowMacOS";
+import MarcOsWindow2 from "../../components/macOS/newWindowMacOS2";
 import type { NextPage } from "next";
 
 const Debug: NextPage = () => {
@@ -67,14 +67,7 @@ const Debug: NextPage = () => {
     <>
       <div className="pt-20 pb-20">
         <div className="flex flex-col items-center justify-center bg-transparent mx-20">
-          <MarcOsWindow
-            title="Profile"
-            initPosition={initPosition}
-            initSize={{ width: windowDimensions.width - 10, height: windowDimensions.height - 50 }}
-          >
-            <p className="vt323-regular text-gray-700">This is the content of the Internet Explorer window.</p>
-            <img src="nyancat-surf.png" alt="nyancat cat" className="h-1/2 py-0 my-0" />
-          </MarcOsWindow>
+          <MarcOsWindow2 />
         </div>
       </div>
     </>

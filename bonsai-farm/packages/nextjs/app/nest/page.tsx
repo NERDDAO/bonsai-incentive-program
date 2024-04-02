@@ -10,9 +10,7 @@ export const metadata = getMetadata({
 });
 
 const Nest: NextPage = () => {
-  const handleClick = () => {
-    console.log('Element clicked!');
-  };
+
   return (
     <>
       <div className="relative pt-20 pb-20">

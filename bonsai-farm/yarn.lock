@@ -2640,6 +2640,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/react-dom@npm:^18":
+  version: 18.2.23
+  resolution: "@types/react-dom@npm:18.2.23"
+  dependencies:
+    "@types/react": "*"
+  checksum: ebed13ffc393f96b3dbe2f959c857c3124c20e84718cded13016eaa2e3b650590557ea75584c4d3d3f226b0aae206167c9c81e971632c1f24bbd258f1d295b96
+  languageName: node
+  linkType: hard
+
 "@types/react@npm:*, @types/react@npm:^18.0.9":
   version: 18.2.23
   resolution: "@types/react@npm:18.2.23"
@@ -2688,6 +2697,13 @@ __metadata:
   version: 2.0.4
   resolution: "@types/trusted-types@npm:2.0.4"
   checksum: 5256c4576cd1c90d33ddd9cc9cbd4f202b39c98cbe8b7f74963298f9eb2159c285ea5c25a6181b4c594d8d75641765bff85d72c2d251ad076e6529ce0eeedd1c
+  languageName: node
+  linkType: hard
+
+"@types/winbox@npm:^0":
+  version: 0.2.5
+  resolution: "@types/winbox@npm:0.2.5"
+  checksum: 86fb3ae05a56815df83c909f6691d8fc3e8694a1bf5f00339da122507e5ffd30b028e5217af10c73802ed09557ebe5da3a8bbc68fb40232ba8c8e02b250107ef
   languageName: node
   linkType: hard
 
@@ -11719,6 +11735,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-winbox@npm:^1.5.0":
+  version: 1.5.0
+  resolution: "react-winbox@npm:1.5.0"
+  dependencies:
+    winbox: =0.2.6
+  peerDependencies:
+    react: ">=16.14.0"
+    react-dom: ">=16.14.0"
+  checksum: 5b373cf6f8b48232f48ef3acee0a92aa7a40b1dbc54741da7c4f9ddad3e6b491dcfb20482c7026bc39e38b02b7357553e0771cc258635aaef5205c844b05d559
+  languageName: node
+  linkType: hard
+
 "react@npm:^18.2.0":
   version: 18.2.0
   resolution: "react@npm:18.2.0"
@@ -12310,9 +12338,16 @@ __metadata:
   resolution: "se-2@workspace:."
   dependencies:
     "@types/howler": ^2
+    "@types/react": ^18.0.9
+    "@types/react-dom": ^18
+    "@types/winbox": ^0
     howler: ^2.2.4
     husky: ^8.0.1
     lint-staged: ^13.0.3
+    react: ^18.2.0
+    react-dom: ^18.2.0
+    react-winbox: ^1.5.0
+    winbox: ^0.2.82
   languageName: unknown
   linkType: soft
 
@@ -14411,6 +14446,20 @@ __metadata:
   dependencies:
     string-width: ^1.0.2 || 2 || 3 || 4
   checksum: d5fc37cd561f9daee3c80e03b92ed3e84d80dde3365a8767263d03dacfc8fa06b065ffe1df00d8c2a09f731482fcacae745abfbb478d4af36d0a891fad4834d3
+  languageName: node
+  linkType: hard
+
+"winbox@npm:=0.2.6":
+  version: 0.2.6
+  resolution: "winbox@npm:0.2.6"
+  checksum: 7216b0b7f40ef20058f43c3d7ef327cfaf1af26ac37ad6d27307cf7b2065aee1310684ae32aba28882a7cbbecc31e4d195c5b530111263464b3aee00f210b926
+  languageName: node
+  linkType: hard
+
+"winbox@npm:^0.2.82":
+  version: 0.2.731
+  resolution: "winbox@npm:0.2.731"
+  checksum: 3475496abc1f09d3dd0dbfb1f9acde74c0cf965644e937c3a9e75d613b7311657a69e4b8ef4e18b1395917933c1e21857fae3e3c59c53426d3be3abf95a5b0e1
   languageName: node
   linkType: hard
 
