@@ -1,8 +1,8 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import React, { useRef, useState } from "react";
 import "../../styles/mac.min.css";
-import logo from "../../public/logo.ico";
 import WinBox from "react-winbox";
 // required
 import "winbox/dist/css/themes/modern.min.css";
@@ -11,11 +11,6 @@ import "winbox/dist/css/themes/white.min.css";
 import "winbox/dist/css/winbox.min.css";
 
 const MarcOsWindow2 = () => {
-  const winbox = new WinBox({
-    title: "Theme: MAC",
-    class: "mac",
-  });
-  winbox;
 
   const [title, setTitle] = useState("Hello");
   const [top, setTop] = useState(30);

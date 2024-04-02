@@ -3,9 +3,8 @@
 import React, { useCallback, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-// import { FaucetButton, RainbowKitCustomConnectButton } from "~~/components/scaffold-eth";
+import { FaucetButton, RainbowKitCustomConnectButton } from "~~/components/scaffold-eth";
 import { useOutsideClick } from "~~/hooks/scaffold-eth";
-
 
 type HeaderMenuLink = {
   label: string;
@@ -40,18 +39,20 @@ export const HeaderMenuLinks = () => {
       {menuLinks.map(({ label, href, icon }) => {
         const isActive = pathname === href;
         return (
-          <li key={href}>
-            <Link
-              href={href}
-              passHref
-              className={`${
-                isActive ? "bg-none shadow-md my-0 py-0" : ""
-              } hover:bg-none hover:shadow-md focus:!border focus:!border-[#7F8B9B] focus:!text-black active:!text-neutral my-0 py-0 px-3 text-sm text-black gap-2 grid grid-flow-col`}
-            >
-              {icon}
-              <span>{label}</span>
-            </Link>
-          </li>
+          <>
+            <li key={href}>
+              <Link
+                href={href}
+                passHref
+                className={`${
+                  isActive ? "bg-none shadow-md my-0 py-0" : ""
+                } hover:bg-none hover:shadow-md focus:!border focus:!border-[#7F8B9B] focus:!text-black active:!text-neutral my-0 py-0 px-3 text-sm text-black gap-2 grid grid-flow-col`}
+              >
+                {icon}
+                <span>{label}</span>
+              </Link>
+            </li>
+          </>
         );
       })}
     </>
@@ -94,15 +95,12 @@ export const HeaderMacOS = () => {
               }}
             >
               <HeaderMenuLinks />
+              <RainbowKitCustomConnectButton />
+
             </ul>
           )}
         </div>
       </div>
-      {/* <div className="navbar-end flex-grow mr-4 py-0 my-0">
-        <RainbowKitCustomConnectButton />
-        <FaucetButton /> 
-      </div> */}
-
     </div>
   );
 };

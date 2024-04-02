@@ -1,77 +1,101 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 /* eslint-disable @next/next/no-img-element */
-import { useEffect, useState } from "react";
-import MarcOsWindow2 from "../../components/macOS/newWindowMacOS2";
+import React, { useRef, useState } from "react";
+import FarmApprove from "../../components/xStakingPoolButtonComponents/farmApprove";
+import FarmBalance from "../../components/xStakingPoolButtonComponents/farmBalance";
+import FarmClaim from "../../components/xStakingPoolButtonComponents/farmClaim";
+import FarmStake from "../../components/xStakingPoolButtonComponents/farmStake";
+import "../../styles/mac.min.css";
 import type { NextPage } from "next";
+import WinBox from "react-winbox";
+import { useAccount } from "wagmi";
 
-const Debug: NextPage = () => {
-  const getWindowDimensions = () => {
-    if (typeof window !== "undefined") {
-      // setPosition({ x: window.innerWidth / 2, y: window.innerHeight / 2 });
-      return {
-        width: window.innerWidth,
-        height: window.innerHeight,
-      };
-    }
-    // Default dimensions if window is not defined (SSR)
-    return { width: 0, height: 0 };
+// required
+import "winbox/dist/css/themes/modern.min.css";
+// optional
+import "winbox/dist/css/themes/white.min.css";
+import "winbox/dist/css/winbox.min.css";
+
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
+const Dashboard: NextPage = () => {
+
+  const { address: connectedAddress } = useAccount();
+
+  const ref = useRef<any>(null);
+
+  const [title, setTitle] = useState("Bonsai Farm");
+  const [top, setTop] = useState(50);
+  const [left, setLeft] = useState(0);
+  const [right, setRight] = useState(0);
+  const [bottom, setBottom] = useState(50);
+  const [theme, setTheme] = useState("mac");
+  const [hide, setHide] = useState(false);
+
+  const [position, setPosition] = useState<number | undefined>(undefined);
+  const [size, setSize] = useState<number | undefined>(undefined);
+  const refreshInfo = () => {
+    setPosition(ref.current?.getPosition());
+    setSize(ref.current?.getSize());
   };
-
-  const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
-
-  useEffect(() => {
-    const handleSize = () => {
-      setWindowDimensions(getWindowDimensions());
-    };
-    handleSize();
-    return () => window.removeEventListener("resize", handleSize);
-  }, []);
-
-  const windowSize = windowDimensions;
-  const [initPosition, setInitPosition] = useState({ x: 350, y: 50 });
-
-  useEffect(() => {
-    // Define breakpoints for screen sizes
-    const breakpoints = {
-      sm: 640,
-      md: 768,
-      lg: 1024,
-    };
-
-    // Determine the current screen size based on window width
-    let screenSize = "lg"; // Default to large screen
-    if (windowSize.width) {
-      screenSize = windowSize.width < breakpoints.sm ? "sm" : windowSize.width < breakpoints.md ? "md" : "lg";
-    }
-
-    // Adjust initPosition based on screen size
-    let newPosition;
-    switch (screenSize) {
-      case "sm":
-        newPosition = { x: 150, y: 20 }; // Example values for small screens
-        break;
-      case "md":
-        newPosition = { x: 250, y: 30 }; // Example values for medium screens
-        break;
-      case "lg":
-      default:
-        newPosition = { x: 350, y: 50 }; // Default values for large screens
-        break;
-    }
-
-    setInitPosition(newPosition);
-  }, [windowSize.width]); // Re-run effect when window width changes
+  const [isFocus, setIsFocus] = useState(false);
+  const [open, setOpen] = useState(false);
 
   return (
     <>
       <div className="pt-20 pb-20">
         <div className="flex flex-col items-center justify-center bg-transparent mx-20">
-          <MarcOsWindow2 />
+          <h1 className="text-8xl">Dashboard</h1>
+          <WinBox
+            title={title}
+            icon="/logo.ico"
+            noMin={false}
+            noMax={false}
+            noFull={true}
+            noClose={false}
+            width={500}
+            height={300}
+            x="center"
+            y="center"
+            top={top}
+            right={right}
+            bottom={bottom}
+            left={left}
+            hide={hide}
+            className={theme ? theme : ""}
+            onMaximize={refreshInfo}
+            onMinimize={refreshInfo}
+            onRestore={refreshInfo}
+            onMove={refreshInfo}
+            onResize={refreshInfo}
+            onClose={() => {
+              // destroying actions while `onclose` must be wrapped within `setTimeout`
+              setTimeout(() => {
+                setOpen(false);
+                setPosition(0);
+                setSize(0);
+              });
+            }}
+            onFocus={() => setIsFocus(true)}
+            onBlur={() => setIsFocus(false)}
+          >
+            <div style={{ padding: 10 }}>
+              {/* <FarmApprove /> */}
+              <FarmBalance />
+              <FarmClaim /> 
+              {/* <FarmStake /> */}
+            </div>
+          </WinBox>
         </div>
       </div>
     </>
   );
 };
 
-export default Debug;
+export default Dashboard;
