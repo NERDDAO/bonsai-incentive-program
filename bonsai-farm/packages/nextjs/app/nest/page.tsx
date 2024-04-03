@@ -25,6 +25,10 @@ import "winbox/dist/css/winbox.min.css";
 import { getMetadata } from "~~/utils/scaffold-eth/getMetadata";
 
 /* eslint-disable react/no-unescaped-entities */
+
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
 const WinBox = dynamic(() => import("react-winbox"), { ssr: false });
@@ -263,8 +267,16 @@ const Nest: NextPage = () => {
                 </h1>
                 <div className="flex items-center justify-around">
                   <div className="flex flex-col">
-                    <img src="goldcoinbonsai.png" alt="nyancat cat" className="object-contain py-0 my-0" />
-                    {isApproved ? <FarmBalance /> : <></>}
+                    {isApproved ? (
+                      <>
+                        <img src="goldcoinbonsai.png" alt="nyancat cat" className="object-contain py-0 my-0" />
+                        <FarmBalance />
+                      </>
+                    ) : (
+                      <>
+                        <img src="poorbonsai.png" alt="nyancat cat" className="object-contain py-0 my-0" />
+                      </>
+                    )}
                   </div>
 
                   {isApproved ? <FarmStake /> : <FarmApprove />}
@@ -318,7 +330,7 @@ const Nest: NextPage = () => {
           >
             <div style={{ padding: 10 }}>
               <img src="mushroombonsaijump.gif" alt="level up bonsai" className="h-1/2 py-0 my-0" />
-              <p>Level:</p>
+              <p>Level: NOOB</p>
             </div>
           </WinBox>
           <WinBox
