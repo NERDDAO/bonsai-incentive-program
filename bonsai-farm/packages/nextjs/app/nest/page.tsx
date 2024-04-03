@@ -29,6 +29,10 @@ import { getMetadata } from "~~/utils/scaffold-eth/getMetadata";
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
 /* eslint-disable react/no-unescaped-entities */
+
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
 const WinBox = dynamic(() => import("react-winbox"), { ssr: false });
@@ -206,8 +210,8 @@ const Nest: NextPage = () => {
             onFocus={() => setIsFocus(true)}
             onBlur={() => setIsFocus(false)}
           >
-            <div style={{ padding: 10 }}>
-              <div className="bg-[url('/bg-mushrom.png')] bg-opacity-75 p-4">
+            <div style={{ background: "/bg-mushrom.png", backgroundSize: "cover", }}>
+              <div className="bg-[url('/bg-mushrom.png')] bg-repeat bg-opacity-75 px-4">
                 <h1 className="vt323-heavy text-gray-700 text-center py-0 my-0">Welcome to Our Epic Bonsai Bonanza!</h1>
                 <div className="flex items-start justify-around gap-4 py-0 my-0">
                   <img src="meme2.png" alt="nyancat cat" className="w-1/6 object-contain py-0 my-0" />
@@ -261,7 +265,7 @@ const Nest: NextPage = () => {
             onBlur={() => setIsFocus(false)}
           >
             <div style={{ padding: 10 }}>
-              <div className="flex flex-col items-center justify-center bg-[url('/bg-pineaple.png')] bg-opacity-75 p-4">
+              <div className="flex flex-col items-center justify-center bg-[url('/bg-pineaple.png')] bg-repeat bg-opacity-75 p-4">
                 <h1 className="vt323-heavy text-gray-700 text-center py-0 my-0">
                   How it works? You can earn $Bonsai with our bonsai NFT, stake them, and get more $Bonsai!
                 </h1>
