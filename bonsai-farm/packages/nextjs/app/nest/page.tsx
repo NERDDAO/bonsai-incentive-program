@@ -1,27 +1,33 @@
 /* eslint-disable react/no-unescaped-entities */
+
 /* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 /* eslint-disable @next/next/no-img-element */
 import React, { useEffect, useRef, useState } from "react";
+import dynamic from "next/dynamic";
 import MarcOsWindow from "../../components/macOS/newWindowMacOS";
-import ApproveButton from "../../components/mint/ApproveButton";
 import FarmApprove from "../../components/xStakingPoolButtonComponents/farmApprove";
+import FarmBalance from "../../components/xStakingPoolButtonComponents/farmBalance";
+import FarmClaim from "../../components/xStakingPoolButtonComponents/farmClaim";
 import FarmStake from "../../components/xStakingPoolButtonComponents/farmStake";
-
 import externalContracts from "../../contracts/externalContracts";
 import "../../styles/mac.min.css";
+import { ethers } from "ethers";
 import type { NextPage } from "next";
-import WinBox from "react-winbox";
 import { useAccount } from "wagmi";
+import { useContractRead } from "wagmi";
 // required
 import "winbox/dist/css/themes/modern.min.css";
 // optional
 import "winbox/dist/css/themes/white.min.css";
 import "winbox/dist/css/winbox.min.css";
-import { useContractRead } from "wagmi";
-import { ethers } from "ethers";
+import { getMetadata } from "~~/utils/scaffold-eth/getMetadata";
 
+/* eslint-disable react/no-unescaped-entities */
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
+const WinBox = dynamic(() => import("react-winbox"), { ssr: false });
 
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
@@ -36,10 +42,9 @@ const Nest: NextPage = () => {
 
   const [theme, setTheme] = useState("mac");
   const [hide, setHide] = useState(false);
-  
 
-  const [position, setPosition] = useState<number | undefined>(undefined);
-  const [size, setSize] = useState<number | undefined>(undefined);
+  const [position, setPosition] = useState<number | undefined>();
+  const [size, setSize] = useState<number | undefined>();
   const refreshInfo = () => {
     setPosition(ref.current?.getPosition());
     setSize(ref.current?.getSize());
@@ -52,20 +57,28 @@ const Nest: NextPage = () => {
 
   const spender = externalContracts[137].xStakingPool.address;
   const amount = ethers.MaxUint256.toString();
-
+  const [balance, setBalance] = useState(0);
 
   const { data } = useContractRead({
     address: externalContracts[137].bonsaiTokenABI.address,
     abi: externalContracts[137].bonsaiTokenABI.abi,
     functionName: "allowance",
-    args: [connectedAddress || '', spender],
+    args: [connectedAddress || "", spender],
+  });
+
+  const { data: dataB } = useContractRead({
+    address: externalContracts[137].xStakingPool.address,
+    abi: externalContracts[137].xStakingPool?.abi,
+    functionName: "balanceOf",
+    args: [connectedAddress || ""],
   });
 
   useEffect(() => {
     if (data) {
       setIsApproved(true);
+      setBalance(Number(dataB));
     }
-  }, [data, connectedAddress]);
+  }, [data, dataB, connectedAddress]);
 
   return (
     <>
@@ -201,8 +214,8 @@ const Nest: NextPage = () => {
                       serene vibes and epic growth gains faster than you can say “photosynthesis!”
                     </p>
                     <p className="vt323-regular text-gray-700 text-start py-0 my-0">
-                      Got beef with our forest? Remember, embracing the bonsai way: we do NOT follow, we photosynthesize.
-                      🌱✨
+                      Got beef with our forest? Remember, embracing the bonsai way: we do NOT follow, we
+                      photosynthesize. 🌱✨
                     </p>
                   </div>
                   <img src="meme1.png" alt="nyancat cat" className="w-1/6 object-contain py-0 my-0" />
@@ -249,9 +262,21 @@ const Nest: NextPage = () => {
                   How it works? You can earn $Bonsai with our bonsai NFT, stake them, and get more $Bonsai!
                 </h1>
                 <div className="flex items-center justify-around">
-                  <img src="bobbonsai.gif" alt="nyancat cat" className="w-1/6 object-contain py-0 my-0" />
+                  <div className="flex flex-col">
+                    <img src="goldcoinbonsai.png" alt="nyancat cat" className="object-contain py-0 my-0" />
+                    {isApproved ? <FarmBalance /> : <></>}
+                  </div>
+
                   {isApproved ? <FarmStake /> : <FarmApprove />}
-                  <img src="bobbonsai.gif" alt="nyancat cat" className="w-1/6 object-contain py-0 my-0" />
+                  <div className="flex flex-col">
+                    {balance ? (
+                      <FarmClaim />
+                    ) : (
+                      <>
+                        <img src="bobbonsai.gif" alt="nyancat cat" className="object-contain py-0 my-0" />
+                      </>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>

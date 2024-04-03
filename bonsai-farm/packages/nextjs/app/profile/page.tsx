@@ -3,14 +3,17 @@
 
 /* eslint-disable @next/next/no-img-element */
 import React, { useRef, useState } from "react";
+import dynamic from 'next/dynamic'; 
+
 import FarmApprove from "../../components/xStakingPoolButtonComponents/farmApprove";
 import FarmBalance from "../../components/xStakingPoolButtonComponents/farmBalance";
 import FarmClaim from "../../components/xStakingPoolButtonComponents/farmClaim";
 import FarmStake from "../../components/xStakingPoolButtonComponents/farmStake";
 import "../../styles/mac.min.css";
 import type { NextPage } from "next";
-import WinBox from "react-winbox";
 import { useAccount } from "wagmi";
+import { getMetadata } from "~~/utils/scaffold-eth/getMetadata";
+
 
 // required
 import "winbox/dist/css/themes/modern.min.css";
@@ -23,6 +26,8 @@ import "winbox/dist/css/winbox.min.css";
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
 /* eslint-disable @typescript-eslint/no-unused-vars */
+const WinBox = dynamic(() => import("react-winbox"), { ssr: false });
+
 
 const Dashboard: NextPage = () => {
 
@@ -38,8 +43,8 @@ const Dashboard: NextPage = () => {
   const [theme, setTheme] = useState("mac");
   const [hide, setHide] = useState(false);
 
-  const [position, setPosition] = useState<number | undefined>(undefined);
-  const [size, setSize] = useState<number | undefined>(undefined);
+  const [position, setPosition] = useState<number | undefined>();
+  const [size, setSize] = useState<number | undefined>();
   const refreshInfo = () => {
     setPosition(ref.current?.getPosition());
     setSize(ref.current?.getSize());

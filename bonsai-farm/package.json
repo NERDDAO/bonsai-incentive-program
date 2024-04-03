@@ -34,20 +34,28 @@
     "vercel:yolo": "vercel --build-env NEXT_PUBLIC_IGNORE_BUILD_ERROR=true",
     "verify": "yarn workspace @se-2/foundry verify"
   },
+  "resolutions": {
+    "usehooks-ts@^2.7.2": "patch:usehooks-ts@npm:^2.7.2#./.yarn/patches/usehooks-ts-npm-2.7.2-fceffe0e43.patch"
+  },
   "packageManager": "yarn@3.2.3",
   "devDependencies": {
     "@types/howler": "^2",
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18",
     "@types/winbox": "^0",
-    "husky": "^8.0.1",
-    "lint-staged": "^13.0.3"
+    "husky": "^9.0.11",
+    "lint-staged": "^13.0.3",
+    "next": "~14.0.4",
+    "vercel": "~32.4.1"
   },
   "dependencies": {
+    "ethers": "^6.11.1",
+    "forge-std": "^1.1.2",
     "howler": "^2.2.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-winbox": "^1.5.0",
+    "wagmi": "^2.5.18",
     "winbox": "^0.2.82"
   }
 }

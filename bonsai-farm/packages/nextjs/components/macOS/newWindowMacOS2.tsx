@@ -41,7 +41,7 @@ const MarcOsWindow2 = () => {
         className={theme ? theme : ""}
       >
         <div style={{ padding: 10 }}>
-          <h3 style={{ margin: 0 }}>React Winbox Demo with Title "{title}"</h3>
+          <h3 style={{ margin: 0 }}>React Winbox Demo with Title</h3>
         </div>
       </WinBox>
     </>

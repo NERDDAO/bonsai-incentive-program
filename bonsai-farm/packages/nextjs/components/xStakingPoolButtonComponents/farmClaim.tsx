@@ -14,7 +14,11 @@ function FarmClaim() {
     }
   };
 
-  return <button onClick={handleClaim}>Claim</button>;
+  return (
+    <button onClick={handleClaim}>
+      <img src="claimbutton.png" alt="claim girl button" className="object-contain py-0 my-0" />
+    </button>
+  );
 }
 
 export default FarmClaim;
