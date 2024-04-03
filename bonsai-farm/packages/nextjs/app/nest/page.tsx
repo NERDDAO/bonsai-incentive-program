@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
@@ -292,10 +293,11 @@ const Nest: NextPage = () => {
           >
             <div style={{ padding: 10 }}>
               <img src="mushroombonsaijump.gif" alt="level up bonsai" className="h-1/2 py-0 my-0" />
+              <p>Level:</p>
             </div>
           </WinBox>
           <WinBox
-            title={"BoBro"}
+            title={"BonBro"}
             icon="/logo.ico"
             noMin={false}
             noMax={false}
@@ -329,6 +331,18 @@ const Nest: NextPage = () => {
           >
             <div style={{ padding: 10 }}>
               <img src="brocolibonsai.png" alt="brocoli bonsai" className="h-1/2 py-0 my-0" />
+              <p>In a wild, wacky world where love takes a spin,</p>
+              <p>Bonsai and broccoli, let the chaos begin!</p>
+              <p>One's a tiny tree, the other's a floret,</p>
+              <p>Their romance is wild, you ain't seen nothin' yet!</p>
+              <p>Bonsai's all like, "Hey, broccoli, you're so fine!"</p>
+              <p>Broccoli blushes, "Stop it, you're blowing my mind!"</p>
+              <p>In a veggie patch rave, they groove to their tune,</p>
+              <p>Bonsai whispers sweet nothings under the moon.</p>
+              <p>Their love's a meme, a degen delight,</p>
+              <p>In a world of norms, they shine bright.</p>
+              <p>So raise your leafy arms and give a cheer,</p>
+              <p>For bonsai and broccoli, love's pioneers! 🌱❤️</p>
             </div>
           </WinBox>
         </div>

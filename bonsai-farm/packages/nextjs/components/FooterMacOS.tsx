@@ -48,13 +48,15 @@ export const FooterMacOS = () => {
             />
           </div>
           <div onClick={toggleUp} className="p-0 drop-shadow-lg">
-            <Image
-              src="/logo-bonsai.png"
-              width="66"
-              height="30"
-              alt="macOS icon"
-              className="m-0 image-rendering-pixelated image-rendering-crisp-edges"
-            />
+            <a href="https://www.bonsai.meme/" target="_blank" rel="noopener noreferrer">
+              <Image
+                src="/logo-bonsai.png"
+                width="66"
+                height="30"
+                alt="macOS icon"
+                className="m-0 image-rendering-pixelated image-rendering-crisp-edges"
+              />
+            </a>
           </div>
           {/* Menu component to be displayed */}
         </div>
