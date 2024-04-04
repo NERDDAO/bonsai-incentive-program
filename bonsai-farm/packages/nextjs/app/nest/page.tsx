@@ -33,6 +33,10 @@ import { getMetadata } from "~~/utils/scaffold-eth/getMetadata";
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
 /* eslint-disable react/no-unescaped-entities */
+
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
 const WinBox = dynamic(() => import("react-winbox"), { ssr: false });
@@ -90,7 +94,7 @@ const Nest: NextPage = () => {
 
   return (
     <>
-      <div className="overflow-scroll">
+      <div className="overflow-scroll" style={{ cursor: 'url("/starbonsai.cur") 4 4, auto' }}>
         <div className="">
           <WinBox
             title={"Mad Farm"}
@@ -185,7 +189,7 @@ const Nest: NextPage = () => {
             noFull={true}
             noClose={false}
             width={850}
-            height={260}
+            height={240}
             x="350"
             y="70"
             top={0}
@@ -210,8 +214,15 @@ const Nest: NextPage = () => {
             onFocus={() => setIsFocus(true)}
             onBlur={() => setIsFocus(false)}
           >
-            <div style={{ background: "/bg-mushrom.png", backgroundSize: "cover", }}>
-              <div className="bg-[url('/bg-mushrom.png')] bg-repeat bg-opacity-75 px-4">
+            <div
+              style={{
+                background: "url('/bg-mushrom.png')",
+                backgroundRepeat: "true",
+                backgroundSize: "fill",
+                cursor: 'url("/starbonsai.gif") 2 2, auto',
+              }}
+            >
+              <div className="px-4">
                 <h1 className="vt323-heavy text-gray-700 text-center py-0 my-0">Welcome to Our Epic Bonsai Bonanza!</h1>
                 <div className="flex items-start justify-around gap-4 py-0 my-0">
                   <img src="meme2.png" alt="nyancat cat" className="w-1/6 object-contain py-0 my-0" />
