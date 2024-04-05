@@ -11,9 +11,8 @@
 body {
   min-height: 100vh;
   font-family: "VT323", "Press Start 2P", system-ui, monospace;
-  cursor:
-  url("/starbonsai.gif") 2 2,
-  auto;
+  cursor: url('../public/bonsaicursor2.png'), none;
+   
 }
 
 h1,

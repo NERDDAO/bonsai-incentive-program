@@ -94,7 +94,7 @@ const Nest: NextPage = () => {
 
   return (
     <>
-      <div className="overflow-scroll" style={{ cursor: 'url("/starbonsai.cur") 4 4, auto' }}>
+      <div className="overflow-scroll">
         <div className="">
           <WinBox
             title={"Mad Farm"}
@@ -175,7 +175,7 @@ const Nest: NextPage = () => {
           >
             <div style={{ padding: 10 }}>
               <a href="https://www.youtube.com/watch?v=fgC-FCZ9B-w" target="_blank" rel="noopener noreferrer">
-                <img src="alicebonsai.png" alt="bonsai alice and bob" className="h-1/2 py-0 my-0 cursor-pointer" />
+                <img src="alicebonsai.png" alt="bonsai alice and bob" className="h-1/2 py-0 my-0" />
               </a>
             </div>
           </WinBox>
@@ -219,7 +219,6 @@ const Nest: NextPage = () => {
                 background: "url('/bg-mushrom.png')",
                 backgroundRepeat: "true",
                 backgroundSize: "fill",
-                cursor: 'url("/starbonsai.gif") 2 2, auto',
               }}
             >
               <div className="px-4">
